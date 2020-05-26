@@ -1,3 +1,69 @@
-body {
-    background-color: blue;
+/* css reset */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+/* container */
+.mainHeading{
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.container{
+    margin: 0 auto; 
+    box-sizing: border-box;
+    width: 1200px;
+    border: 1px solid black;
+    display: flex; 
+    grid-template-columns: auto auto auto;    
+    background-color: grey; 
+    padding: 10px;
+    justify-content: space-evenly;
+    align-content: center;
+
+}
+
+.card{
+    width: 150px;
+    background-color: red;
+    padding: 20px;
+    text-align: center;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, minmas(100px, 200px));
+    grid-gap: 1rem;
+    grid-auto-flow: dense;
+    
+
+}
+
+.changeBtn{
+    margin-top: 20px;
+}
+.deleteBtn{
+    margin-top: 5px;
 }
