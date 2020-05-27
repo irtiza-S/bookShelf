@@ -3,58 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myLibrary</title>
+    <title>myBookShelf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href='style.css'>
+    <script src="https://kit.fontawesome.com/86326a2a1a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 class='mainHeading'>myLibrary</h1>
-    <div class='container'>
+    <h1 class='mainHeading'>myBookShelf</h1>
+    <div class='plusIcon'><i class='fas fa-plus-circle' id='plus'></i></div>
+    <div class='addBookForm' id='addBookForm'>
+        <form action="#" class='form-container'>
+            <h1>Add a book: </h1>
+            
+            <label for="title" class='label'>Title</label>
+            <input type="text" placeholder="Enter title of book" name='title' required>
+
+            <label for="author" class='label'>Author</label>
+            <input type="text" placeholder='Enter author of book' name='author' required>
+
+            <label for="pages" class='label'>Pages</label>
+            <input type="number" id='bPages' placeholder='Enter no. of pages' name='pages' required>
+
+            <label for="isRead" class='labels'>Has the book been read?</label>
+            <input type="checkbox" id='readCheckbox' name='isRead'>
+
+            <button type='submit' id='submitBtn'>Add book</button>
+            <button type='submit' id='exitBtn'>Exit</button>
+        </form>
+    </div>
+    <div id='container'class='container'>
+
         <div class='card'>
-            <h5>Title: </h5>
-            <h5>Author: </h5>
-            <h5>Pages: </h5>
-            <h5>isRead: </h5>
-            <button class='changeBtn'>Change Status</button>
-            <button class='deleteBtn'>Delete</button>
+            <h5 class='cardText'id='title'>Title: </h5>
+            <h5 class='cardText'id='author'>Author: </h5>
+            <h5 class='cardText'id='pages'>Pages: </h5>
+            <h5 class='cardText'id='isRead'>Read: </h5>
+            <button id='readStatus'class='changeBtn btn'>Change Status</button>
+            <button id='deleteBtn'class='deleteBtn btn'>Delete</button>
         </div>
-        <div class='card'>
-            <h5>Title: </h5>
-            <h5>Author: </h5>
-            <h5>Pages: </h5>
-            <h5>isRead: </h5>
-            <button class='changeBtn'>Change Status</button>
-            <button class='deleteBtn'>Delete</button>
-        </div>
-        <div class='card'>
-            <h5>Title: </h5>
-            <h5>Author: </h5>
-            <h5>Pages: </h5>
-            <h5>isRead: </h5>
-            <button class='changeBtn'>Change Status</button>
-            <button class='deleteBtn'>Delete</button>
-        </div>
-        <div class='card'>
-            <h5>Title: </h5>
-            <h5>Author: </h5>
-            <h5>Pages: </h5>
-            <h5>isRead: </h5>
-            <button class='changeBtn'>Change Status</button>
-            <button class='deleteBtn'>Delete</button>
-        </div><div class='card'>
-            <h5>Title: </h5>
-            <h5>Author: </h5>
-            <h5>Pages: </h5>
-            <h5>isRead: </h5>
-            <button class='changeBtn'>Change Status</button>
-            <button class='deleteBtn'>Delete</button>
-        </div><div class='card'>
-            <h5>Title: </h5>
-            <h5>Author: </h5>
-            <h5>Pages: </h5>
-            <h5>isRead: </h5>
-            <button class='changeBtn'>Change Status</button>
-            <button class='deleteBtn'>Delete</button>
-        </div>
+        
+       
+        
     </div>
 
 

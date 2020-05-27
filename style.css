@@ -2,7 +2,7 @@
 html {
     box-sizing: border-box;
     font-size: 16px;
-    
+    font-family: 'Balsamiq Sans', cursive;
   }
   
   *, *:before, *:after {
@@ -27,7 +27,7 @@ html {
 
 /* container */
 .mainHeading{
-    margin: 0 auto;
+    margin: 10px auto;
     text-align: center;
 
 }
@@ -35,35 +35,105 @@ html {
 .container{
     margin: 0 auto; 
     box-sizing: border-box;
-    width: 1200px;
-    border: 1px solid black;
-    display: flex; 
-    grid-template-columns: auto auto auto;    
-    background-color: grey; 
-    padding: 10px;
-    justify-content: space-evenly;
-    align-content: center;
-
-}
-
-.card{
-    width: 150px;
-    background-color: red;
-    padding: 20px;
-    text-align: center;
-    height: 200px;
+    /* width: 1000px; */
+    /* border: 1px solid black; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(4, minmas(100px, 200px));
-    grid-gap: 1rem;
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fit, 250px);    
+    /* background-color: grey;  */
+    justify-content: center;
+    grid-gap: 20px;
+    
     
 
 }
 
-.changeBtn{
-    margin-top: 20px;
+.card{
+    background-color: red;
+    text-align: center;
+    padding: 10px;
+    
 }
-.deleteBtn{
-    margin-top: 5px;
+
+.cardText{
+  margin: 10px;
+  font-size: 110%;
 }
+
+.btn{
+  margin: 20px;
+  text-align: center;
+  padding: 10px;
+  
+}
+
+.plusIcon{
+  margin: 10px auto;
+  text-align: center;
+  font-size: 30px;
+  
+}
+
+.fa-plus-circle{
+  cursor: pointer;
+}
+
+.fa-plus-circle:hover{
+  opacity: 0.5;
+  transition: 500ms all ease-in-out;
+}
+
+/* addBook form styling */
+
+
+.addBookForm{
+  width: 500px;
+  margin: 10px auto;
+  text-align: center;
+  border: 10px solid rgb(165, 156, 156);
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-width: 0.5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#bPages{
+  display: block;
+  padding: 14px 20px;
+  width: 100%;
+  margin: 8px 0;
+  border-radius: 4px;
+  border-width: 0.5px;
+}
+
+#bPages::focus{
+  outline:none;
+}
+
+#submitBtn{
+  display: block;
+  margin: 8px auto;
+  
+}
+
+
+
