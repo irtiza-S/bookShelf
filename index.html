@@ -16,10 +16,10 @@
             <h1>Add a book: </h1>
             
             <label for="title" class='label'>Title</label>
-            <input type="text" placeholder="Enter title of book" name='title' required>
+            <input id='booktitle'type="text" placeholder="Enter title of book" name='title' required>
 
             <label for="author" class='label'>Author</label>
-            <input type="text" placeholder='Enter author of book' name='author' required>
+            <input id='bookauthor'type="text" placeholder='Enter author of book' name='author' required>
 
             <label for="pages" class='label'>Pages</label>
             <input type="number" id='bPages' placeholder='Enter no. of pages' name='pages' required>
@@ -27,19 +27,19 @@
             <label for="isRead" class='labels'>Has the book been read?</label>
             <input type="checkbox" id='readCheckbox' name='isRead'>
 
-            <button type='submit' id='submitBtn'>Add book</button>
-            <button type='submit' id='exitBtn'>Exit</button>
+            <div class='submit'id='submitBtn'>Add book</div>
+            <div class='submit'id='exitBtn'>Exit</div>
         </form>
     </div>
     <div id='container'class='container'>
 
-        <div class='card'>
+        <div style='display:none'class='card'>
             <h5 class='cardText'id='title'>Title: </h5>
             <h5 class='cardText'id='author'>Author: </h5>
             <h5 class='cardText'id='pages'>Pages: </h5>
             <h5 class='cardText'id='isRead'>Read: </h5>
-            <button id='readStatus'class='changeBtn btn'>Change Status</button>
-            <button id='deleteBtn'class='deleteBtn btn'>Delete</button>
+            <div id='readStatus'class='changeBtn btn'>Change Status</div>
+            <div id='deleteBtn'class='deleteBtn btn'>Delete</div>
         </div>
         
        
