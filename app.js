@@ -1,18 +1,40 @@
 //Step 1: - declare variables, target dom elements
 let container = document.getElementById('container');
 let readStatus = document.getElementById('readStatus');
-let deleteBtn = document.querySelector('.deleteBtn')
+let deleteBtn = document.querySelector('.deleteBtn');
 let addNewBookBtn = document.getElementById('plus');
 let exitFormBtn = document.getElementById('exitBtn');
 // let bookCard = document.querySelector('.card');
 let myLibrary = []; //stores book objects;
 
-//Book function constructor
-function Book(title, author, pages, isRead){
-    this.title = title;
-    this.author = author; 
-    this.pages = pages;
-    this.isRead = isRead;
+//Book class
+class Book{
+    constructor(title, author, pages, isRead){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+
+    delete(book){
+        //method will remove the object from the list
+        let bookIndex = myLibrary.indexOf(book); //returns index of x in myLibrary array
+        if(bookIndex > -1){
+            //if the index is greater than -1 - then only delete the value from that index using splice method
+            myLibrary.splice(bookIndex, 1);
+        }
+    }
+
+    changeReadStatus(e){
+        if(e.currentTarget.previousElementSibling.innerText === 'Read: No'){
+            e.currentTarget.previousElementSibling.innerText = 'Read: Yes';
+            e.currentTarget.previousElementSibling.value = true;
+        }
+        else{
+            e.currentTarget.previousElementSibling.innerText = 'Read: No';
+            e.currentTarget.previousElementSibling.value = false;
+        }
+    }
 }
 
 function addBookToshelf(obj){
@@ -20,34 +42,6 @@ function addBookToshelf(obj){
     
 }
 
-Book.prototype.deleteBook = function(x){
-    //This method will remove the object from the list
-    let bookIndex = myLibrary.indexOf(x); //returns index of x in myLibrary 
-    if (bookIndex > -1){
-        //if the index is greater than -1 then only delete the value from that index using splice().
-        myLibrary.splice(bookIndex, 1);
-    }   
-}
-
-Book.prototype.changeReadStatus = function(e){
-    if(e.currentTarget.previousElementSibling.innerText === 'Read: No'){
-        e.currentTarget.previousElementSibling.innerText = 'Read: Yes';
-        e.currentTarget.previousElementSibling.value = true;
-    }
-    else{
-        e.currentTarget.previousElementSibling.innerText = 'Read: No';
-        e.currentTarget.previousElementSibling.value = false;
-    }
-}
-// testing with dummy data
-// let book1 = new Book('Hello World', 'Irtiza', 45, 'Yes');
-// let book2 = new Book('Hello Universe', 'God', 500, 'No');
-// addBookToshelf(book1);
-// addBookToshelf(book2);
-
-
-// console.log(addBookToshelf(book1)); //returns array with two objects - book1, book2
-// console.log(addBookToshelf(book2)); //same here
 
 
 function render(arr){
@@ -114,19 +108,15 @@ function render(arr){
         bookCardDiv.appendChild(deleteButton);   
         //adds onclick event onto deleteBtn  - removing the card when clicked
         deleteButton.addEventListener('click', (e) => {
-            arr[i].deleteBook(arr[i]); //this will remove the currentbook from the myLibrary array - that way we aren't 'burning the book'.
-            // console.log(myLibrary);
+            arr[i].delete(arr[i]); //this will remove the currentbook from the myLibrary array - that way we aren't 'burning the book'.
+            console.log(myLibrary);
             //we want to target the parentNode of the currentTarget which in this instance is the card element - bookCardDiv
             container.removeChild(e.currentTarget.parentNode);
         });
         //This is resoonsible for changing the readStatus of bookCard
         changeStatus.addEventListener('click', arr[i].changeReadStatus);
     }
-    console.log(myLibrary);
-    // arr.shift() //this will remove the first element from myLibrary - it will prevent cards being duplicated when submitting new books
-    
-
-    
+    // console.log(myLibrary); //logs array to console    
 }
 
 // render(myLibrary);
